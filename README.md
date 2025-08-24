@@ -79,9 +79,9 @@ namespace foriver4725.BetterButton
                 // in this method, the passed parameter is captured once on .Subscribe().
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    betterButton.Subscribe(buttons[i], (Index: i, Time: Time.time), static param =>
+                    betterButton.Subscribe(buttons[i], (Index: i, Name: buttons[i].gameObject.name), static param =>
                     {
-                        Debug.Log(param.Index + " at " + param.Time);
+                        Debug.Log(param.Index + " by " + param.Name);
                     }, destroyCancellationToken);
                 }
             }
@@ -115,10 +115,10 @@ namespace foriver4725.BetterButton
                 // in this method, the passed parameter is captured once on .Subscribe().
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    betterButton.SubscribeAwait(buttons[i], (Index: i, Time: Time.time), static async (param, ct) =>
+                    betterButton.SubscribeAwait(buttons[i], (Index: i, Name: buttons[i].gameObject.name), static async (param, ct) =>
                     {
                         await UniTask.DelayFrame(64, cancellationToken: ct);
-                        Debug.Log(param.Index + " at " + param.Time);
+                        Debug.Log(param.Index + " by " + param.Name);
                     }, destroyCancellationToken);
                 }
             }
