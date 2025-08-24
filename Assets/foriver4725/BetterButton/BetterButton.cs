@@ -16,7 +16,7 @@ namespace foriver4725.BetterButton
         private readonly bool isOnErrorResumeFailure;
         private readonly ReactiveProperty<bool> gate;
 
-        public ReadOnlyReactiveProperty<bool> Gate => gate;
+        public bool IsAnyBeingExecuted => !gate.Value;
 
         public BetterButton(float throttleDuration, bool isOnErrorResumeFailure = false)
         {
