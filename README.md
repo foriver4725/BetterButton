@@ -5,12 +5,14 @@ This library provides a wrapper class for button.OnClickAsObservable() that prev
 
 ## How to Setup
 ### 1. Install via Git URL
-Install from:<br/>
-`https://github.com/foriver4725/BetterButton.git?path=Assets/foriver4725/BetterButton`
+Install from:
+```
+https://github.com/foriver4725/BetterButton.git?path=Assets/foriver4725/BetterButton
+```
 ### 2. (When necessary) Setup .asmdef reference
 Add `foriver4725.BetterButton.asmdef` to your assembly definition references.
 ### 3. Add a using directive
-At the top of your source code file, add:<br/>
+At the top of your source code file, add:
 ```cs
 using foriver4725.BetterButton;
 ```
