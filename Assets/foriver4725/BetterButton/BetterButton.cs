@@ -10,22 +10,22 @@ namespace foriver4725.BetterButton
     /// <summary>
     /// A wrapper class for button.OnClickAsObservable() that prevents rapid consecutive clicks and overlapping presses.
     /// </summary>
-    internal sealed class BetterButton
+    public sealed class BetterButton
     {
         private readonly TimeSpan throttleDuration;
         private readonly bool isOnErrorResumeFailure;
         private readonly ReactiveProperty<bool> gate;
 
-        internal ReadOnlyReactiveProperty<bool> Gate => gate;
+        public ReadOnlyReactiveProperty<bool> Gate => gate;
 
-        internal BetterButton(float throttleDuration, bool isOnErrorResumeFailure = false)
+        public BetterButton(float throttleDuration, bool isOnErrorResumeFailure = false)
         {
             this.throttleDuration = TimeSpan.FromSeconds(throttleDuration);
             this.isOnErrorResumeFailure = isOnErrorResumeFailure;
             this.gate = new(true);
         }
 
-        internal IDisposable Subscribe(Button button, Action onNext, CancellationToken ct)
+        public IDisposable Subscribe(Button button, Action onNext, CancellationToken ct)
         {
             if (button == null)
             {
@@ -63,7 +63,7 @@ namespace foriver4725.BetterButton
                 .RegisterTo(ct);
         }
 
-        internal IDisposable Subscribe<T>(Button button, T state, Action<T> onNext, CancellationToken ct)
+        public IDisposable Subscribe<T>(Button button, T state, Action<T> onNext, CancellationToken ct)
         {
             if (button == null)
             {
@@ -101,7 +101,7 @@ namespace foriver4725.BetterButton
                 .RegisterTo(ct);
         }
 
-        internal IDisposable SubscribeAwait(Button button, Func<CancellationToken, UniTask> onNextAsync, CancellationToken ct)
+        public IDisposable SubscribeAwait(Button button, Func<CancellationToken, UniTask> onNextAsync, CancellationToken ct)
         {
             if (button == null)
             {
@@ -143,7 +143,7 @@ namespace foriver4725.BetterButton
                 .RegisterTo(ct);
         }
 
-        internal IDisposable SubscribeAwait<T>(Button button, T state, Func<T, CancellationToken, UniTask> onNextAsync, CancellationToken ct)
+        public IDisposable SubscribeAwait<T>(Button button, T state, Func<T, CancellationToken, UniTask> onNextAsync, CancellationToken ct)
         {
             if (button == null)
             {
