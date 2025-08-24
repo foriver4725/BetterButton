@@ -1,23 +1,3 @@
-# BetterButton
-
-## Description
-This library provides a wrapper class for button.OnClickAsObservable() that prevents rapid consecutive clicks and overlapping presses.
-
-## How to Setup
-### 1. Install via Git URL
-Install from:<br/>
-`git@github.com:foriver4725/BetterButton.git?path=BetterButton/Assets/foriver4725/BetterButton`
-### 2. (When necessary) Setup .asmdef reference
-Add `foriver4725.BetterButton.asmdef` to your assembly definition references.
-### 3. Add a using directive
-At the top of your source code file, add:<br/>
-```cs
-using foriver4725.BetterButton;
-```
-
-## Examples
-You can also see this program at the `Sample.cs` script.
-```cs
 using UnityEngine;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
@@ -106,4 +86,3 @@ namespace foriver4725.BetterButton
         }
     }
 }
-```
